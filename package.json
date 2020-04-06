@@ -1,0 +1,24 @@
+{
+  "name": "ejam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd frontend && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn frontend\"",
+    "dev:server": "cd frontend && yarn build && cd .. && yarn start",
+    "start": "node server.js",
+    "heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
